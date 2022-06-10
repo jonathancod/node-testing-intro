@@ -14,19 +14,12 @@ function dollarTextToNumber(dollarText: string | number) {
   let parsedValue = `${dollarText}`
     .replace(moneySymbols, '')
     .trim();
-  parsedValue = abbreviatedMillionsToInteger(parsedValue);
   return parseFloat(parsedValue);
-}
-
-function abbreviatedMillionsToInteger(dollarText: string) {
-  return (dollarText || '')
-  .replace(/(\d)\s?mil(lion)?/i, '$1000000');
 }
 
 const utils = {
   dollarsToCents,
   dollarTextToNumber,
-  abbreviatedMillionsToInteger,
 }
 
 export default utils;
